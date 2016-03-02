@@ -1,0 +1,6 @@
+com/bidding/controller/TestController.class
+com/bidding/entity/User.class
+com/bidding/repository/UserRepository.class
+com/bidding/controller/UserController.class
+com/bidding/service/TestService.class
+com/bidding/service/UserService.class
