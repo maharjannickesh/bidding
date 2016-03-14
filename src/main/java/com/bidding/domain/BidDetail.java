@@ -3,20 +3,34 @@ package com.bidding.domain;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class BidDetail {
 	
+	
+	@Id
+	@GeneratedValue
 	private Long bidId;
 	
+	@NotEmpty(message="{message.notempty}")
 	private double bidAmount;
 	
+	@NotEmpty(message="{message.notempty}")
 	private Date bidDate;
 	
+	@NotEmpty(message="{message.notempty}")
 	private String bidStatus;
 	
+	@ManyToMany
 	private User userId;
 	
+	@ManyToOne
 	private Product productId;
 	
 	

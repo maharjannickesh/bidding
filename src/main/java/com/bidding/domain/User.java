@@ -6,30 +6,41 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.bidding.formatter.Address;
-import com.bidding.formatter.Phone;
-
 @Entity
 public class User {
+	
+	@Id
+	@GeneratedValue
 	private Long userId;
 	
+	@NotEmpty(message="{message.notempty}")
+	@Size(min=4, message="{message.size}")
 	private String userName;
 	
+	@NotEmpty(message="{message.notempty}")
+	@Size(min=6, message="{message.size}")
 	private String userPassword;
 	
+	@NotEmpty(message="{message.notempty}")
+	@Email(message="message.email")
 	private String userEmail;
 	
+	@NotEmpty(message="{message.notempty}")
 	private String userRole;
 	
+	@NotEmpty(message="{message.notempty}")
 	private Phone userPhone;
 	
+	@NotEmpty(message="{message.notempty}")
 	private Address userAddress;
 	
+	@OneToMany
 	private List<Product> products;
 	
 	public List<Product> getProducts() {

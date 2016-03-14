@@ -5,6 +5,8 @@ import java.util.Locale;
 
 import org.springframework.format.Formatter;
 
+import com.bidding.domain.Address;
+
 public class AddressFormatter implements Formatter<Address> {
 
 	@Override

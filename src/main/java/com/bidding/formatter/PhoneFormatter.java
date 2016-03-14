@@ -5,6 +5,8 @@ import java.util.Locale;
 
 import org.hibernate.engine.jdbc.internal.Formatter;
 
+import com.bidding.domain.Phone;
+
 public class PhoneFormatter implements org.springframework.format.Formatter<Phone>{
 
 	@Override
