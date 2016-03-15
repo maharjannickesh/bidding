@@ -4,18 +4,22 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class BidDetail {
+@Table(name="bid")
+public class Bid {
 	
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long bidId;
 	
 	@NotEmpty(message="{message.notempty}")
@@ -27,14 +31,15 @@ public class BidDetail {
 	@NotEmpty(message="{message.notempty}")
 	private String bidStatus;
 	
-	@ManyToMany
-	private User userId;
+	@OneToOne
+	private User user;
 	
-	@ManyToOne
-	private Product productId;
+
+	@OneToOne
+	private Product product;
 	
 	
-	public BidDetail(){
+	public Bid(){
 		
 	}
 
@@ -79,24 +84,26 @@ public class BidDetail {
 	}
 
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 
-	public Product getProductId() {
-		return productId;
-	}
 
 
-	public void setProductId(Product productId) {
-		this.productId = productId;
-	}
+//	public Product getProductId() {
+//		return productId;
+//	}
+//
+//
+//	public void setProductId(Product productId) {
+//		this.productId = productId;
+//	}
 	
 	
 

@@ -6,10 +6,14 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Size;
 
@@ -17,11 +21,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
+@Table(name="product")
 public class Product {
 
 	@Id
-	@GeneratedValue
-	private Long productId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
 	@NotEmpty(message="{message.notempty}")
 	@Size(min=4, message="{message.size}")
@@ -31,7 +36,7 @@ public class Product {
 	@Size(min=20, message="{message.size}")
 	private String productDescription;
 	
-	@NotEmpty(message="{message.notempty}")
+	@Transient
 	private MultipartFile productImage;
 	
 	@NotEmpty(message="{message.notempty}")
@@ -47,23 +52,29 @@ public class Product {
 	@NotEmpty(message="{message.notempty}")
 	private boolean productStatus;
 
-	@ManyToOne
+	@OneToOne
 	private User user;
 	
-	@OneToMany
-	private List<BidDetail> bidDetails;
+	@OneToMany(mappedBy="product")
+	private List<Bid> bids;
 	
 	public Product(){
 		
 	}
 
-	public Long getProductId() {
-		return productId;
+
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+
 
 	public String getProductName() {
 		return productName;
@@ -129,13 +140,18 @@ public class Product {
 		this.user = user;
 	}
 
-	public List<BidDetail> getBidDetails() {
-		return bidDetails;
+
+
+	public List<Bid> getBids() {
+		return bids;
 	}
 
-	public void setBidDetails(List<BidDetail> bidDetails) {
-		this.bidDetails = bidDetails;
+
+
+	public void setBids(List<Bid> bids) {
+		this.bids = bids;
 	}
+
 
 	
 	

@@ -5,19 +5,22 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(name="user")
 public class User {
 	
 	@Id
-	@GeneratedValue
-	private Long userId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
 	@NotEmpty(message="{message.notempty}")
 	@Size(min=4, message="{message.size}")
@@ -34,17 +37,31 @@ public class User {
 	@NotEmpty(message="{message.notempty}")
 	private String userRole;
 	
-	@NotEmpty(message="{message.notempty}")
-	private Phone userPhone;
+
+//	@NotEmpty(message="{message.notempty}")
+//	private Phone userPhone;
+//	
+//	@NotEmpty(message="{message.notempty}")
+//	private Address userAddress;
 	
-	@NotEmpty(message="{message.notempty}")
-	private Address userAddress;
-	
-	@OneToMany
+	@OneToMany(mappedBy="user") 
 	private List<Product> products;
+	
+	
+	@OneToMany(mappedBy="user")
+	private List<Bid> bidDetails;
+	
 	
 	public List<Product> getProducts() {
 		return products;
+	}
+
+	public List<Bid> getBidDetails() {
+		return bidDetails;
+	}
+
+	public void setBidDetails(List<Bid> bidDetails) {
+		this.bidDetails = bidDetails;
 	}
 
 	public void setProducts(List<Product> products) {
@@ -55,12 +72,14 @@ public class User {
 		
 	}
 
-	public Long getUserId() {
-		return userId;
+	
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getUserName() {
@@ -95,21 +114,21 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	public Phone getUserPhone() {
-		return userPhone;
-	}
-
-	public void setUserPhone(Phone userPhone) {
-		this.userPhone = userPhone;
-	}
-
-	public Address getUserAddress() {
-		return userAddress;
-	}
-
-	public void setUserAddress(Address userAddress) {
-		this.userAddress = userAddress;
-	}
+//	public Phone getUserPhone() {
+//		return userPhone;
+//	}
+//
+//	public void setUserPhone(Phone userPhone) {
+//		this.userPhone = userPhone;
+//	}
+//
+//	public Address getUserAddress() {
+//		return userAddress;
+//	}
+//
+//	public void setUserAddress(Address userAddress) {
+//		this.userAddress = userAddress;
+//	}
 	
 	
 
