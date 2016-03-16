@@ -15,9 +15,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -39,17 +41,18 @@ public class Product {
 	@Transient
 	private MultipartFile productImage;
 	
-	@NotEmpty(message="{message.notempty}")
+	
 	private Date productStartDate;
 	
-	@NotEmpty(message="{message.notempty}")
+	@NotNull
 	@Future(message="{message.future}")
+	@DateTimeFormat(pattern  = "MM-dd-yyyy")
 	private Date productEndDate;
-	
-	@NotEmpty(message="{message.notempty}")
+
+	@NotNull
 	private double productInitialPrice;
 	
-	@NotEmpty(message="{message.notempty}")
+	
 	private boolean productStatus;
 
 	@OneToOne
@@ -58,6 +61,20 @@ public class Product {
 	@OneToMany(mappedBy="product")
 	private List<Bid> bids;
 	
+	private String imagePath;
+	
+	public String getImagePath() {
+		return imagePath;
+	}
+
+
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+
+
 	public Product(){
 		
 	}

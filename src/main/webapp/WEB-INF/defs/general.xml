@@ -9,10 +9,10 @@
 		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
 	</definition>
 
-	<definition name="index" extends="common">
+	<definition name="frontend/index" extends="common">
 		<put-attribute name="title" value="Home || Bidding" />
 		<put-attribute name="navigation" value="" />
-		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/frontend/index.jsp" />
 	</definition>
 	
 	<definition name="user/adduser" extends="common">
@@ -39,5 +39,16 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/user/alluser.jsp" />
 	</definition>
 	
+	<definition name="product/allproduct" extends="common">
+		<put-attribute name="title" value="All products || Bidding" />
+		<put-attribute name="navigation" value="/WEB-INF/jsp/basic/navbar.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/product/allproduct.jsp" />
+	</definition>
+	
+	<definition name="frontend/productdetails" extends="common">
+		<put-attribute name="title" value="Bid Now || Bidding" />
+		<put-attribute name="navigation" value=" " />
+		<put-attribute name="body" value="/WEB-INF/jsp/frontend/productdetails.jsp" />
+	</definition>
 	
 </tiles-definitions>

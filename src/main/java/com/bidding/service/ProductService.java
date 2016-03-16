@@ -1,9 +1,35 @@
 package com.bidding.service;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 
-@Entity
-public interface ProductService {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bidding.domain.Product;
+import com.bidding.repository.ProductRepository;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	public void save(Product product) {
+		productRepository.save(product);
+		
+	}
+
+	public Object findAll() {
+		return productRepository.findAll();
+	}
+
+	public Object findByUserId(long userId) {
+		return productRepository.findByuserId(userId);
+	}
+
+	public Object findOne(int id) {
+		return productRepository.findOne((long) id);
+	}
+	
+	
 }

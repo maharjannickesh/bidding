@@ -8,4 +8,5 @@ import com.bidding.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	public User getUserByuserName(String user);
 }

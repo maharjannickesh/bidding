@@ -4,9 +4,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<div class="mainbody .col-md-2">
+<div class="">
 
-<table class="table table-striped">
+<table class="">
 <thead>
 	<tr>
 		<th> <spring:message code="list.user.sno"/> </th>

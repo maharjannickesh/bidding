@@ -28,4 +28,12 @@ public class UserService {
 		
 	}
 
+	public User getUser(Long uId) {
+		return userRepository.findOne(uId);
+	}
+
+	public User getUserByUsername(String name) {
+		return userRepository.getUserByuserName(name);
+	}
+
 }
