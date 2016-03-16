@@ -33,24 +33,27 @@
 		<div>
 			<em>Bid EndTime: </em> ${product.productEndDate }
 		</div>
-		
+
 
 
 		<div>
-			<form:form action="bidNow" commandName="bid">
+
+
+			<form:form commandName="bid" method="POST">
+
 				<div>
-					<label>BId Amount: </label>
-					<form:input path="bidAmount" type="number" min="${product.productInitialPrice }" />
+					<label>Bid Amount: </label> 
+					<form:input path="bidAmount" type="number" min="100" />
 
 				</div>
 
 				<div>
-					<input type="submit" value="Bid" />
+					<input type="submit" value="Bid">
 
 				</div>
-
 
 			</form:form>
+
 
 
 		</div>

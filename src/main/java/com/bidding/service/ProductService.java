@@ -30,6 +30,10 @@ public class ProductService {
 	public Object findOne(int id) {
 		return productRepository.findOne((long) id);
 	}
+
+	public Product getProduct(int id) {
+		return productRepository.findOne((long) id);
+	}
 	
 	
 }

@@ -10,6 +10,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -22,14 +23,14 @@ public class Bid {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long bidId;
 	
-	@NotEmpty(message="{message.notempty}")
+	@NotNull
 	private double bidAmount;
 	
-	@NotEmpty(message="{message.notempty}")
+	
 	private Date bidDate;
 	
-	@NotEmpty(message="{message.notempty}")
-	private String bidStatus;
+	
+	private Boolean bidStatus;
 	
 	@OneToOne
 	private User user;
@@ -74,12 +75,12 @@ public class Bid {
 	}
 
 
-	public String getBidStatus() {
+	public Boolean getBidStatus() {
 		return bidStatus;
 	}
 
 
-	public void setBidStatus(String bidStatus) {
+	public void setBidStatus(Boolean bidStatus) {
 		this.bidStatus = bidStatus;
 	}
 
@@ -94,16 +95,19 @@ public class Bid {
 	}
 
 
+	public Product getProduct() {
+		return product;
+	}
 
 
-//	public Product getProductId() {
-//		return productId;
-//	}
-//
-//
-//	public void setProductId(Product productId) {
-//		this.productId = productId;
-//	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+
+
+
+
 	
 	
 
