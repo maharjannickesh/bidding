@@ -6,6 +6,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/java/com/bidding/formatter/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <property name="java-output-path" value="/Bidding/target/classes"/>
         <property name="context-root" value="BiddingProject"/>
     </wb-module>
