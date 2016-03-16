@@ -4,40 +4,28 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<div class="">
-
-<table class="">
-<thead>
-	<tr>
-		<th> <spring:message code="list.user.sno"/> </th>
-		<th><spring:message code="list.user.name"/></th>
-		<th><spring:message code="list.user.email"/></th>
-		<th><spring:message code="list.user.edit"/> </th>
-		<th><spring:message code="list.user.delete"/></th>
-	</tr>
-
-</thead>
-<tbody>
-
-
-<c:forEach items="${ users }" var="user">
-<tr>
-		<td>1</td>
-		<td>${user.userName }</td>
-		<td>${user.userEmail }</td>
-		<td>${user.id }</td>
-		<td><a href='<c:url value="/user/delete/${user.id }"/>'> Delete </a></td>
-		
-	</tr>
-
-</c:forEach>
-	
-</tbody>
-
-</table>
-
+<div class="formBody">
+	<h2>
+		<strong>Users</strong>
+	</h2>
+	<div class="table">
+		<table>
+			<tr>
+			<th><spring:message code="list.user.sno" /></th>
+			<th><spring:message code="list.user.name" /></th>
+			<th><spring:message code="list.user.email" /></th>
+			<th><spring:message code="list.user.edit" /></th>
+			<th><spring:message code="list.user.delete" /></th>
+		</tr>
+			<c:forEach items="${ users }" var="user">
+			<tr>
+				<td>1</td>
+				<td>${user.userName }</td>
+				<td>${user.userEmail }</td>
+				<td>${user.id }</td>
+				<td><a href='<c:url value="/user/delete/${user.id }"/>'>Delete </a></td>
+			</tr>
+			</c:forEach>
+		</table>
+	</div>
 </div>
-
-
-</body>
-</html>
