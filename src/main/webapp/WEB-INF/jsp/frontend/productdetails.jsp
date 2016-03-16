@@ -3,56 +3,37 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
-
-<div id="header">
-	<h1>HOPE IS ALIVE</h1>
-
-</div>
-<div id="menu">
-	<a href="welcome.jsp"><button>HOME</button></a> <a href="#"><button>MY
-			PROFILE</button></a> <a href="#"><button>CONTACT US</button></a> <a href="#"><button>ABOUT
-		</button></a>
-</div>
-
-
-<legend>
-	<div id="section">
-		<h2>${product.productName }</h2>
-		<p>
-			<img src=" " />
-		</p>
-		<div>
-			<em>About: </em>
-			<p>${product.productDescription }</p>
+<div class="formBody">
+	<h2><strong>Bid Form</strong></h2>
+	<div class="row">
+		<div class="product-image">
+			<img src="" />
 		</div>
-		<div>
-			<em>Inital Price: </em> ${product.productInitialPrice }
+		<div class="formLebel">
+			<strong>Name:</strong> ${product.productName }
 		</div>
-		<div>
-			<em>Bid EndTime: </em> ${product.productEndDate }
+		<div class="formLebel">
+			<Strong>Description:</Strong>${product.productDescription }
 		</div>
-		
-
-
-		<div>
-			<form:form action="bidNow" commandName="bid">
-				<div>
-					<label>BId Amount: </label>
-					<form:input path="bidAmount" type="number" min="${product.productInitialPrice }" />
-
-				</div>
-
-				<div>
-					<input type="submit" value="Bid" />
-
-				</div>
-
-
-			</form:form>
-
-
+		<div class="formLebel">
+			<Strong>Product Price :</Strong>${product.productInitialPrice }
+		</div>
+		<div class="formLebel">
+			<Strong>Product End Date:</Strong>${product.productEndDate }
 		</div>
 	</div>
-</legend>
+	<form:form action="bidNow" commandName="bid">
+		<div class="row">
+			
+			<div class="formLebel">
+				<label>BId Amount: </label>
+						<form:input path="bidAmount" type="number" min="${product.productInitialPrice }" />
+			</div>
+			<div class="formError">
+			</div>
+			<div class="formInput">
+				<input type="submit" value="Bid" />
+			</div>
+		</div>
+	</form:form>
+</div>

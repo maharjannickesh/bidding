@@ -4,83 +4,88 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div>
+<div class="formBody">
+	<h2><strong>Add Product Form</strong></h2>
 	<form:form commandName="product" enctype="multipart/form-data">
-
-		<div class="">
-			<label for="productName" class=" "> <spring:message text=""
-					code="addProduct.form.productName.label" />
-			</label>
-			<div class=" ">
-				<form:input path="productName" cssClass=" " required="required" />
+		<div class="row">
+			<div class="formLebel">
+				<label for="productName"> 
+					<spring:message text="" code="addProduct.form.productName.label" />
+				</label>
+			</div>
+			<div class="formInput">
+				<form:input path="productName" required="required" />
+			</div>
+			<div class="formError">
 				<form:errors path="productName" />
 			</div>
 		</div>
-
 		
-		<div class="">
-			<label for="productDescription" class=" "> <spring:message
-					text="" code="addProduct.form.productDescription.label" />
-			</label>
-			<div class=" ">
-				<form:textarea path="productDescription" cssClass=" "
-					required="required"  />
+		<div class="row">
+			<div class="formLebel">
+				<label for="productDescription"> <spring:message text=""
+					code="addProduct.form.productDescription.label" />
+				</label>
+			</div>
+			<div class="formInput">
+				<form:textarea path="productDescription" required="required" />
+			</div>
+			<div class="formError">
 				<form:errors path="productDescription" />
 			</div>
 		</div>
-
-
-
- 		<div class="">
-			<label for="productEndDate" class=" "> <spring:message
-					text="" code="addProduct.form.productEndDate.label" />
-			</label>
-			<div class=" ">
-				<form:input path="productEndDate" cssClass=" " required="required"
-					type="" />
+		
+		
+		<div class="row">
+			<div class="formLebel">
+				<label for="productEndDate"> <spring:message text=""
+					code="addProduct.form.productEndDate.label" />
+				</label>
+			</div>
+			<div class="formInput">
+				<form:input path="productEndDate" required="required" type="" />
+			</div>
+			<div class="formError">
 				<form:errors path="productEndDate" />
 			</div>
 		</div>
 		
-		<div class="">
-			<label for="productInitialPrice" class=" "> <spring:message
-					text="" code="addProduct.form.productInitialPrice.label" />
+		<div class="row">
+			<div class="formLebel">
+				<label for="productInitialPrice"> <spring:message text=""
+					code="addProduct.form.productInitialPrice.label" />
 			</label>
-			<div class=" ">
-				<form:input path="productInitialPrice" cssClass=" "
-					required="required" type="number" />
+			</div>
+			<div class="formInput">
+				<form:input path="productInitialPrice" required="required"
+					type="number" />
+			</div>
+			<div class="formError">
 				<form:errors path="productInitialPrice" />
 			</div>
 		</div>
-
-	
-		 <div class="">
-			<label for="productImage" class=" "> <spring:message text=""
+		
+		<div class="row">
+			<div class="formLebel">
+				<label for="productImage"> <spring:message text=""
 					code="addProduct.form.productImage.label" />
 			</label>
-			<div class=" ">
-				<form:input path="productImage" cssClass=" " required="required"
-					type="file" />
+			</div>
+			<div class="formInput">
+				<form:input path="productImage" required="required" type="file" />
+			</div>
+			<div class="formError">
 				<form:errors path="productImage" />
 			</div>
 		</div>
 
-	
-		
-		<div class="">
-
-			<div class=" ">
-				<input type="submit" value="Save" class=" ">
+		<div class="row">
+			<div class="formInput">
+				<input type="submit" value="Save">
+				<input type="reset" value="Clear">
 			</div>
-
 		</div>
 
-
-
-
 	</form:form>
-
-
-
 </div>
 

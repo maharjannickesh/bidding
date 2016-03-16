@@ -4,62 +4,28 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-
-<div id="header">
-	<h1>HOPE IS ALIVE</h1>
+<div class="product-list">
+	<c:forEach items="${product }" var="products">
+		<div class="product">
+			<div class="product-image">
+				<img src="" alt="Product Image" />
+			</div>
+			<div class="product-name">
+				<strong>Name:</strong>${products.productName }
+			</div>
+			<div class="product-description">
+				<strong>Description:</strong> ${products.productDescription }
+			</div>
+			<div class="product-initial-price">
+				<strong>Initial Price:</strong>${products.productInitialPrice }
+			</div>
+			<div class="product-end-date">
+				<strong>Product Bit End Date:</strong> ${products.productEndDate }
+			</div>
+			<div class="product-bit-now">
+				<a href='<c:url value="/bid/details/${products.id }"/>'>Bid Now</a>
+			</div>
+		</div>
+	</c:forEach>
 
 </div>
-<div id="menu">
-	<a href="welcome.jsp"><button>HOME</button></a> <a href="#"><button>MY
-			PROFILE</button></a> <a href="#"><button>CONTACT US</button></a> <a href="#"><button>ABOUT
-		</button></a>
-</div>
-
-<!-- <div id="nav">
-		<table class="test">
-			<tr>
-				<td><a href="addProduct.jsp">Add Product</a></td>
-			<td>	<a href="welcome.jsp"><button>Add Product</button></a></td>
-			</tr>
-			<tr>
-				<td>	<a href="welcome.jsp"><button>View  Products</button></a></td>
-			</tr>
-			<tr>
-				<td>	<a href="welcome.jsp"><button>Auction Products</button></a></td>
-			</tr>
-			<tr>
-				<td>	<a href="welcome.jsp"><button>Marie Claire</button></a></td>
-			</tr>
-			<tr>
-				<td>	<a href="welcome.jsp"><button>Krishna</button></a></td>
-			</tr>
-			<tr>
-				<td>	<a href="welcome.jsp"><button>Nikesh</button></a></td>
-			</tr>
-		</table>
-	</div>
- -->
-<c:forEach items="${product }" var="products">
-
-	<legend>
-	<div id="section">
-		<h2>${products.productName }</h2>
-		<p>
-			<img src=" " />
-		</p>
-		<div>
-			<em>About: </em>
-			<p>${products.productDescription }</p>
-		</div>
-		<div>
-			<em>Inital Price: </em>  ${products.productInitialPrice }
-		</div>
-		<div>
-			<em>Bid EndTime: </em>  ${products.productEndDate }
-		</div>
-		<div>
-		<a href='<c:url value="/bid/details/${products.id }"/>'> 	<button >Bid Now</button> </a>
-		</div>
-	</div>
-	</legend>
-</c:forEach>
