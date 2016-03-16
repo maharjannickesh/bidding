@@ -1,0 +1,77 @@
+@CHARSET "ISO-8859-1";
+#header {
+	background-color: #A1D490;
+	color: black;
+	text-align: center;
+	padding: 20px;
+}
+
+#nav {
+	line-height: 30px;
+	background-color:#E2FAD9;
+	height: 470px;
+	width: 200px; float : left;
+	padding: 5px;
+	line-height: 30px;
+	bottom: 0px;
+	float: left;
+	border-color: black;
+}
+
+#section {
+	width: 350px;
+	float: left;
+	padding: 10px;
+}
+
+#footer {
+	position: absolute;
+	color: black;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+	background-color: #A1D490;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+	width: 100%;
+	bottom: 0px;
+}
+
+table {
+	margin-top: 100px;
+	font-weight: bold;
+}
+
+body {
+	margin: auto;
+}
+#menu{
+background-color:#A1D490;
+position: relative;
+margin:auto;
+text-align: center;
+}
+button{
+font-weight: bold;
+border-radius:40px;
+padding:5px;
+background-color: black;
+color:white;
+width:120px;
+}
+.test button{
+/* border-radius:10px;
+background-color: white;
+border-color: black;
+color:black; */
+width: 200px;
+ height: 30px;
+ background:#A1D490;
+ -webkit-transform: skew(20deg);
+ -moz-transform: skew(20deg);
+ -o-transform: skew(20deg);
+ transform: skew(20deg);
+ color:black;
+
+}
