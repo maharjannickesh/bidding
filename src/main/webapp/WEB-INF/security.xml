@@ -17,14 +17,14 @@
 	
 	
 	<authentication-manager>
-		<authentication-provider>
+		<!-- <authentication-provider>
 		<password-encoder  hash="bcrypt"/>
 			<user-service>
 				<user name="user" password="$2a$10$znN80C2Uu8yg7wlOuJ3g9.lg/l.yCt3i9Uy4Q4qKVEcpEPjeV/Wa." authorities="ROLE_USER" />
 				<user name="admin" password="$2a$10$znN80C2Uu8yg7wlOuJ3g9.lg/l.yCt3i9Uy4Q4qKVEcpEPjeV/Wa." authorities="ROLE_ADMIN" />
 				<user name="super" password="$2a$10$znN80C2Uu8yg7wlOuJ3g9.lg/l.yCt3i9Uy4Q4qKVEcpEPjeV/Wa." authorities="ROLE_USER,ROLE_ADMIN" />
 			</user-service>
-		</authentication-provider>
+		</authentication-provider> -->
 
 		<authentication-provider>
 		<password-encoder hash="bcrypt"/>
