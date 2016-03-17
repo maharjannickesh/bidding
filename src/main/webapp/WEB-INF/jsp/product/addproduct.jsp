@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="formLebel">
 				<label for="productName"> 
-					<spring:message text="" code="addProduct.form.productName.label" />
+					<spring:message text="Product" code="addProduct.form.productName.label" />
 				</label>
 			</div>
 			<div class="formInput">

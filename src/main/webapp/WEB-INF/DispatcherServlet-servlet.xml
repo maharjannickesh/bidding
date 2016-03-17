@@ -15,6 +15,7 @@
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property> 
 		<property name="prefix" value="/WEB-INF/jsp/" /> <property name="suffix" 
 		value=".jsp" /> </bean> -->
+		
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -40,6 +41,7 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="message" />
 	</bean>
+	
 
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
