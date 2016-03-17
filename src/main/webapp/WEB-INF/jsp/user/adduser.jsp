@@ -13,7 +13,7 @@
 				</label>
 			</div>
 			<div class="formInput">
-				<form:input path="userName"	required="required" />
+				<form:input path="userName"	required="required" id="username" />
 			</div>
 			<div class="formError">
 				<form:errors path="userName" />

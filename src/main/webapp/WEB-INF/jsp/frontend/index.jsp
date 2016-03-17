@@ -14,7 +14,7 @@
 				<strong>Name:</strong>${products.productName }
 			</div>
 			<div class="product-description">
-				<strong>Description:</strong> ${products.productDescription }
+				<strong>Description:</strong> <p> ${products.productDescription } </p>
 			</div>
 			<div class="product-initial-price">
 				<strong>Initial Price:</strong>${products.productInitialPrice }
