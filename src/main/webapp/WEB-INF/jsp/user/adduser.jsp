@@ -15,7 +15,7 @@
 			<div class="formInput">
 				<form:input path="userName"	required="required" id="username" />
 			</div>
-			<div class="formError">
+			<div class="formError username">
 				<form:errors path="userName" />
 			</div>
 		</div>

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.bidding.domain.User;
 import com.bidding.service.UserService;
 
@@ -51,6 +53,11 @@ public class UserController {
 	public String deleteUser(@PathVariable int id ){
 		userService.deleteUser(id);
 		return "redirect:/user?delete=1";
+	}
+	
+	@RequestMapping(value = "/validate", method = RequestMethod.POST)
+	public @ResponseBody String validate(String username) {
+		return "" + userService.isExisted(username);
 	}
 	
 	
