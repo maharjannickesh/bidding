@@ -25,7 +25,7 @@
 			<Strong>Product End Date:</Strong>${product.productEndDate }
 		</div>
 	</div>
-	<form:form action="bidNow" commandName="bid">
+	<form:form  commandName="bid" method="POST">
 		<div class="row">
 
 			<div class="formLebel">

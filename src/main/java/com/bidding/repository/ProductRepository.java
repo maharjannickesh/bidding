@@ -1,15 +1,23 @@
 package com.bidding.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.bidding.domain.Product;
+import com.bidding.domain.User;
 
 @Repository
 public interface ProductRepository  extends JpaRepository<Product, Long>{
 
-	Object findByuserId(long userId);
+	List<Product> findByuserId(long userId);
+
+	List<Product> findByProductEndDateAfter(Date date);
+
+	
 
 }

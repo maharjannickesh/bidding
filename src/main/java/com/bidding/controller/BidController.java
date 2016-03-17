@@ -45,12 +45,13 @@ public class BidController {
 	
 	
 	
-//	@RequestMapping(value="/mybid", method = RequestMethod.GET)
-//	public String myBid(Model model, HttpServletRequest request){
-//		Object userId = request.getSession().getAttribute("userId");
-//		Long uId = (Long) userId;
-//		model.addAttribute("bids", bidService.getbyuserId(uId));
-//		return "bid/mybid";
-//	}
+	@RequestMapping(value="/mybid", method = RequestMethod.GET)
+	public String myBid(Model model, HttpServletRequest request){
+		Object userId = request.getSession().getAttribute("userId");
+		Long uId = (Long) userId;
+		System.out.println(uId);
+		model.addAttribute("bids", bidService.getbyuserId(uId));
+		return "bid/mybid";
+	}
 
 }

@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="formBody">
+	<em> ${save }</em>
 	<h2><strong>Add Product Form</strong></h2>
 	<form:form commandName="product" enctype="multipart/form-data">
 		<div class="row">

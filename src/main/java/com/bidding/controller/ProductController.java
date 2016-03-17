@@ -84,8 +84,9 @@ public class ProductController {
 		}
 
 		productService.save(product);
+		redirectAttributes.addFlashAttribute("save", "Product Added Sucessfully");
 
-		return "product/addproduct";
+		return "redirect:/product/add";
 	}
 
 	@RequestMapping(value = "")

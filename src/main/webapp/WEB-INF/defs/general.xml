@@ -50,4 +50,10 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/frontend/productdetails.jsp" />
 	</definition>
 	
+	<definition name="bid/mybid" extends="common">
+		<put-attribute name="title" value="Home || Bidding" />
+		<put-attribute name="navigation" value="/WEB-INF/jsp/basic/navbar.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/bid/mybid.jsp" />
+	</definition>
+	
 </tiles-definitions>

@@ -43,20 +43,20 @@ public class LoginController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 		User user = UserService.getUserByUsername(auth.getName());
-		
+
 		if (user == null) {
 			return "redirect:/login";
 		}
 		request.getSession().setAttribute("userId", user.getId());
 		request.getSession().setAttribute("userRole", user.getUserRole());
-		
+		String Role = (String) request.getSession().getAttribute("userRole");
 		System.out.println(request.getSession().getAttribute("userRole"));
-		return "redirect:/product";
-		
-//		if (request.isUserInRole(Role.ROLE_ADMIN.toString())) {
-//			return "redirect:/admin";
-//		} else {
-//			return "redirect:/snippet";
-//		}
+
+		if (Role.equals("ROLE_ADMIN")) {
+			return "redirect:/user";
+		} else {
+			return "redirect:/product";
+		}
+
 	}
 }
