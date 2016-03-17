@@ -36,4 +36,13 @@ public class UserService {
 		return userRepository.getUserByuserName(name);
 	}
 
+	public boolean isExisted(String username) {
+		User user = userRepository.getUserByuserName(username);
+		if(user == null){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 }
