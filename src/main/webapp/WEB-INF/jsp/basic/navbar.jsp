@@ -7,10 +7,8 @@
 	<a href="?language=np">Nepali</a>
 </div>
 <div class="menu">
-
-
 	<div class="link">
-		<a href='<c:url value=""/>'>Home  </a>
+		<a href='<c:url value="/"/>'>Home  </a>
 	</div>
 
 	<c:if test="${sessionScope.userRole == 'ROLE_ADMIN' }">

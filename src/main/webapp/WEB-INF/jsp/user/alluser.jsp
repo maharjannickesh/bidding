@@ -8,6 +8,9 @@
 	<h2>
 		<strong>Users</strong>
 	</h2>
+	<div class="link" >
+		<a href='<c:url value="/user/add"/>'>Add User</a>
+	</div>
 	<div class="table">
 		<table>
 			<tr>

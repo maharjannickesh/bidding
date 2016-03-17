@@ -13,10 +13,10 @@ $(document).ready(function() {
 			success : function(result) {
 				
 				if ($.trim(result) == "true") {
-					alert("ok");
+					
 					$('.username').html('This username is already used!').show();
 				} else {
-					alert("okied");
+					$('.username').html('This username Works').show();
 					//$('#form-registration').submit();
 				}
 			},
