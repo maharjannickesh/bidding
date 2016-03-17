@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bidding.domain.User;
 import com.bidding.service.UserService;
@@ -34,13 +35,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result ){
+	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result, RedirectAttributes redirectAttributes ){
 		
-		userService.save(user);
+		
 		if (result.hasErrors()){
 			return "user/adduser";
 		}
-		return "redirect:/user/add?result=1";
+		userService.save(user);
+		redirectAttributes.addFlashAttribute("save", "User Added Sucessfully");
+		return "redirect:/user/add";
 	}
 	
 	@RequestMapping(value=" ", method = RequestMethod.GET)

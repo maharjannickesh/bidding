@@ -7,16 +7,28 @@
 	<a href="?language=np">Nepali</a>
 </div>
 <div class="menu">
+
+
 	<div class="link">
-		<a href="#home">Home</a>
+		<a href='<c:url value=""/>'>Home  </a>
 	</div>
+
+	<c:if test="${sessionScope.userRole == 'ROLE_ADMIN' }">
 	<div class="link">
-		<a href="#home">User</a>
+		<a href='<c:url value="/user"/>'>User</a>
 	</div>
+	</c:if>
 	<div class="link">
-		<a href="#home">Product</a>
+		<a href='<c:url value="/product"/>'>Product</a>
 	</div>
+	<c:if test="${not empty sessionScope.userRole }">
 	<div class="link">
-		<a href="<c:url value='j_spring_security_logout' />">Logout</a>
+		<a href="<c:url value='/logout' />">Logout</a>
 	</div>
+	</c:if>
+	<c:if test="${empty sessionScope.userRole}">
+	<div class="link">
+		<a href="<c:url value='/login' />">Login</a>
+	</div>
+	</c:if>
 </div>

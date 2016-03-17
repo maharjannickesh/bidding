@@ -5,10 +5,11 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<http>
-		<intercept-url pattern="/testSecurity" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/user/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/product/add" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/product" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
+		<intercept-url pattern="/bid/**" access="hasRole('ROLE_USER')" />
+		
 		<form-login default-target-url="/login-success" />
 		<logout  logout-success-url="/" />
 		<csrf disabled="true" />

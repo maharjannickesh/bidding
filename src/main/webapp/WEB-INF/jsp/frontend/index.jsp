@@ -8,7 +8,7 @@
 	<c:forEach items="${product }" var="products">
 		<div class="product">
 			<div class="product-image">
-				<img src="" alt="Product Image" />
+				<img src='<c:url value="/resources/images/${products.imagePath }.png"/>' alt="Product Image" />
 			</div>
 			<div class="product-name">
 				<strong>Name:</strong>${products.productName }

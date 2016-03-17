@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 
-	<mvc:annotation-driven />
+	<mvc:annotation-driven validator="validator" />
 
 	<context:component-scan base-package="com.bidding.controller" />
 
@@ -40,7 +40,16 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="message" />
 	</bean>
+	
+		<bean id="errormessageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:errormessage" />
+	</bean>
 
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="errormessageSource" />
+	</bean>
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language"></property>

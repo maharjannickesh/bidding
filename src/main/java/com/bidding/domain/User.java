@@ -23,18 +23,18 @@ public class User {
 	private Long id;
 	
 	@NotEmpty(message="{message.notempty}")
-	@Size(min=4, message="{message.size}")
+	@Size(min=4, max=1000, message="{message.size}")
 	private String userName;
 	
 	@NotEmpty(message="{message.notempty}")
-	@Size(min=6, message="{message.size}")
+	//@Size(min=6, message="{message.size}")
 	private String userPassword;
 	
-	@NotEmpty(message="{message.notempty}")
-	@Email(message="message.email")
+	//@NotEmpty(message="{message.notempty}")
+	//@Email(message="message.email")
 	private String userEmail;
 	
-	@NotEmpty(message="{message.notempty}")
+	//@NotEmpty(message="{message.notempty}")
 	private String userRole;
 	
 

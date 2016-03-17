@@ -50,7 +50,7 @@ public class LoginController {
 		request.getSession().setAttribute("userId", user.getId());
 		request.getSession().setAttribute("userRole", user.getUserRole());
 		String Role = (String) request.getSession().getAttribute("userRole");
-		System.out.println(request.getSession().getAttribute("userRole"));
+		//System.out.println(request.getSession().getAttribute("userRole"));
 
 		if (Role.equals("ROLE_ADMIN")) {
 			return "redirect:/user";
