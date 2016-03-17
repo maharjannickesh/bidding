@@ -15,6 +15,7 @@
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property> 
 		<property name="prefix" value="/WEB-INF/jsp/" /> <property name="suffix" 
 		value=".jsp" /> </bean> -->
+		
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -41,10 +42,13 @@
 		<property name="basename" value="message" />
 	</bean>
 	
+<<<<<<< HEAD
 		<bean id="errormessageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:errormessage" />
 	</bean>
+=======
+>>>>>>> dbb6d2b45d18e36d210cf072a4c6465243ef6849
 
 	<bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
